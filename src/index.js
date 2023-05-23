@@ -7,8 +7,13 @@ const container = document.getElementById('card-container');
 
 const fetchDataAndRenderCards = async () => {
   const shows = await fetchData();
-  shows.forEach((show) => {
-    const card = renderCards(show);
+  const renderPromises = shows.map(async (show) => {
+    const card = await renderCards(show);
+    return card;
+  });
+
+  const renderedCards = await Promise.all(renderPromises);
+  renderedCards.forEach((card) => {
     container.appendChild(card);
   });
 };

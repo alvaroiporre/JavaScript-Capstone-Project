@@ -1,60 +1,46 @@
-const renderCards = (show) => {
+import handleLike from './handleLike.js';
+import getItemLikesCount from './getLikes.js';
+
+const renderCards = async (show) => {
   const card = document.createElement('div');
   card.classList.add('card');
 
-  const image = createImage(show.image.original);
-  const title = createTitle(show.name);
-  //const likes = createLikes(show.likes); for the next request
-  const comments = createComments();
+  card.appendChild(createElement('img', { src: show.image.original, class: 'card-image' }));
+  card.appendChild(createElement('h2', { textContent: show.name, class: 'card-title' }));
 
-  card.appendChild(image);
-  card.appendChild(title);
-  //card.appendChild(likes);
-  card.appendChild(comments);
+  const likesCount = await getItemLikesCount(show.id);
+  const likesContainer = createElement('div', { class: 'card-likes' });
+  likesContainer.appendChild(createLikeButton(show.id));
+  likesContainer.appendChild(createElement('span', { textContent: `${likesCount} likes` }));
+  card.appendChild(likesContainer);
+
+  card.appendChild(createElement('button', { textContent: 'Comments', class: 'card-comments', onclick: openModal }));
 
   return card;
 };
 
-const createImage = (imageUrl) => {
-  const image = document.createElement('img');
-  image.classList.add('card-image');
-  image.src = imageUrl;
-  return image;
+const createLikeButton = (itemId) => {
+  const likeButton = createElement('button', { class: 'card-like-button', onclick: () => handleLike(itemId) });
+  likeButton.innerHTML = '<i class="fa fa-heart"></i>';
+  return likeButton;
 };
 
-const createTitle = (titleText) => {
-  const title = document.createElement('h2');
-  title.classList.add('card-title');
-  title.innerText = titleText;
-  return title;
-};
-/*
-const createLikes = (likeCount) => {
-  const likes = document.createElement('div');
-  likes.classList.add('card-likes');
-
-  const heartIcon = document.createElement('i');
-  heartIcon.classList.add('card-icon', 'fa', 'fa-heart');
-
-  const likesText = document.createElement('span');
-  likesText.innerText = `${likeCount} likes`;
-
-  likes.appendChild(heartIcon);
-  likes.appendChild(likesText);
-
-  return likes;
-};
-*/
-const createComments = () => {
-  const comments = document.createElement('button');
-  comments.classList.add('card-comments');
-  comments.innerText = 'Comments';
-
-  comments.addEventListener('click', () => {
-    // CODE FOR MODAL WINDOW
+const createElement = (tagName, attributes = {}) => {
+  const element = document.createElement(tagName);
+  Object.entries(attributes).forEach(([key, value]) => {
+    if (key === 'textContent') {
+      element.textContent = value;
+    } else if (key === 'onclick') {
+      element.addEventListener('click', value);
+    } else {
+      element.setAttribute(key, value);
+    }
   });
+  return element;
+};
 
-  return comments;
+const openModal = () => {
+  // CODE FOR MODAL WINDOW
 };
 
 export { renderCards };
