@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Welcome to the TV Series Hub, your ultimate destination for discovering and watching your favorite TV series. Explore a vast collection of popular shows, get episode guides, cast information, and immerse yourself in the captivating world of television entertainment. Start binge-watching now and stay up-to-date with the latest releases. Join us on the TV Series Hub and indulge in a thrilling TV experience like never before!">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <title>TV Series Hub: Discover, Watch, and Explore Your Favorite TV Shows</title>
+      <title>TV Series Hub</title>
       <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
@@ -16,18 +16,27 @@
     </head>
     <body>
         <div class="container">
-        <header>
-          <nav>
-            <a href="index.html" class="logo">
-              <img src="./img/tv-hub.png" alt="TV Series Hub Logo">
-            </a>
-            <ul class="nav-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Shows</a></li>
-              <li><a href="#">About</a></li>
-            </ul>
-          </nav>
-        </header>
+          <header>
+            <nav>
+              <a href="index.html" class="logo">
+                <img src="./img/tv-hub.png" class="logo-img" alt="TV Series Hub Logo">
+                <span class="motto">Discover, Watch, and Explore Your Favorite TV Shows</span>
+              </a>
+
+              <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
+              <label for="nav-toggle" class="nav-toggle-label">
+                <span class="sr-only">Open main menu</span>
+                <span class="burger"></span>
+                <span class="burger"></span>
+                <span class="burger"></span>
+              </label>
+              <ul class="nav-links" id="nav-menu">
+                <li class="nav-link"><a href="#">Home</a></li>
+                <li class="nav-link"><a href="#card-container">Shows<span id="nav-counter">(0)</span></a></li>
+                <li class="nav-link"><a href="#">About</a></li>
+              </ul>
+            </nav>
+          </header>
         <main>
             <div class="card-grid" id="card-container">
             </div>

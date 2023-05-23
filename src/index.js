@@ -1,21 +1,50 @@
 import './index.css';
-
-import { renderCards } from './modules/renderCards.js';
+import handleLike from './modules/handleLike.js';
+import { renderCards, updateLikesCountCallback } from './modules/renderCards.js';
 import fetchData from './modules/fetchShows.js';
+import toggleBurger from './modules/navToggle.js';
 
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-links');
 const container = document.getElementById('card-container');
+
+let showsTotal = 0;
+
+const updateCounter = () => {
+  const counterElement = document.getElementById('nav-counter');
+  counterElement.textContent = `(${showsTotal})`;
+};
 
 const fetchDataAndRenderCards = async () => {
   const shows = await fetchData();
   const renderPromises = shows.map(async (show) => {
     const card = await renderCards(show);
-    return card;
+    container.appendChild(card);
+    showsTotal += 1;
   });
 
-  const renderedCards = await Promise.all(renderPromises);
-  renderedCards.forEach((card) => {
-    container.appendChild(card);
-  });
+  await Promise.all(renderPromises);
+  updateCounter();
 };
 
-fetchDataAndRenderCards();
+navToggle.addEventListener('click', toggleBurger);
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+document.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('card-like-button')) {
+    const itemId = event.target.getAttribute('data-item-id');
+    await handleLike(itemId, updateLikesCountCallback);
+  }
+});
+
+document.addEventListener('click', () => {
+  const visibility = navMenu.getAttribute('data-visible');
+  if (visibility === 'true' && window.innerWidth < 768) {
+    toggleBurger();
+  }
+});
+
+fetchDataAndRenderCards().then(() => {
+  updateCounter();
+});
