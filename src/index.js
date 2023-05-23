@@ -1,13 +1,16 @@
 import './index.css';
 
-const title = window.document.getElementById('tv-show-title');
+import { renderCards } from './modules/renderCards.js';
+import fetchData from './modules/fetchShows.js';
 
-let data = [];
+const container = document.getElementById('card-container');
 
-await fetch('https://api.tvmaze.com/shows')
-  .then((response) => response.json())
-  .then((json) => {
-    data = json;
+const fetchDataAndRenderCards = async () => {
+  const shows = await fetchData();
+  shows.forEach((show) => {
+    const card = renderCards(show);
+    container.appendChild(card);
   });
+};
 
-title.innerText = data[0].name;
+fetchDataAndRenderCards();
