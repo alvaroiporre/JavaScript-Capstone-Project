@@ -29,8 +29,6 @@ const fetchDataAndRenderCards = async () => {
 
 navToggle.addEventListener('click', toggleBurger);
 
-const navLinks = document.querySelectorAll('.nav-link');
-
 document.addEventListener('click', async (event) => {
   if (event.target.classList.contains('card-like-button')) {
     const itemId = event.target.getAttribute('data-item-id');

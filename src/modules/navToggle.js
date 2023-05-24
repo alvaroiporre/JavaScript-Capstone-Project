@@ -1,7 +1,5 @@
 const navMenu = document.querySelector('.nav-links');
 const navToggle = document.querySelector('.nav-toggle');
-const burgerLineTop = document.querySelector('.burger-line-top');
-const burgerLineBottom = document.querySelector('.burger-line-bottom');
 
 function toggleBurger() {
   const width = window.innerWidth;
