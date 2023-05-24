@@ -2,7 +2,7 @@ import handleLike from './handleLike.js';
 import getItemLikesCount from './getLikes.js';
 import getItemComments from './getComments.js';
 import closeIcon from '../img/close.png';
-
+import addComment from './addComment.js';
 
 const updateLikesCountCallback = async (itemId) => {
   const likesCountElement = document.querySelector(`#likes-count-${itemId}`);
@@ -10,6 +10,18 @@ const updateLikesCountCallback = async (itemId) => {
   likesCountElement.textContent = `${likesCount} likes`;
 };
 
+const updateCommentsCallback = async (commentsCountN, comment) => {
+  const commentsCount = document.getElementById('comments-count');
+  commentsCount.innerText = `Comments (${commentsCountN})`;
+
+  const listComments = document.getElementById('list-comments');
+  listComments.innerHTML += `
+      <li class="comment"><b>${new Date().toISOString().split('T')[0]} ${comment.username}</b>: ${comment.comment}</li>
+    `;
+
+  document.getElementById('username').value = '';
+  document.getElementById('comment').value = '';
+};
 const createElement = (tagName, attributes = {}) => {
   const element = document.createElement(tagName);
   Object.entries(attributes).forEach(([key, value]) => {
@@ -30,10 +42,10 @@ const createLikeButton = (itemId) => {
   return likeButton;
 };
 
-const openModal = async (show, likesCount) => {
+const openModal = async (show) => {
   const modal = document.getElementById('modal-container');
   modal.classList.toggle('hide');
-  modal.innerHTML =`
+  modal.innerHTML = `
   <div class="modal-content">
   <img class="close-button" id="close-button" src="${closeIcon}" alt="close-button"}">
   <img class="modal-image" src="${show.image.original}" alt="modal-image">
@@ -55,14 +67,14 @@ const openModal = async (show, likesCount) => {
   </article>
   <article>
     <h2>Add a comment</h2>
-    <form class="add-comment">
+    <form class="add-comment" id="add-comment-form">
       <input class="input-comment" type="text" placeholder="Your Name" id="username" require>
-      <textarea class="input-comment" placeholder="Your Insights" id"comment" require></textarea>
+      <textarea class="input-comment" placeholder="Your Insights" id="comment" require></textarea>
       <input class="input-comment" type="submit" value="Comment" id="comment-button">
     <form>
   </article>
   </div>`;
-  
+
   document.getElementById('close-button').addEventListener('click', () => {
     modal.classList.toggle('hide');
   });
@@ -73,13 +85,18 @@ const openModal = async (show, likesCount) => {
     listComments.innerHTML += `
       <li class="comment"><b>${comment.creation_date} ${comment.username}</b>: ${comment.comment}</li>
     `;
-  })
+  });
 
   const commentsCount = document.getElementById('comments-count');
   commentsCount.innerText = `Comments (${comments.length})`;
-  
 
-
+  const addCommentForm = document.getElementById('add-comment-form');
+  addCommentForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const usernameInput = document.getElementById('username').value;
+    const commentInput = document.getElementById('comment').value;
+    await addComment(show.id, usernameInput, commentInput, comments.length, updateCommentsCallback);
+  });
 };
 
 const renderCards = async (show) => {
@@ -97,7 +114,7 @@ const renderCards = async (show) => {
   likesContainer.appendChild(createElement('span', { textContent: `${likesCount} likes`, id: `likes-count-${show.id}` }));
   flexContainer.appendChild(likesContainer);
   card.appendChild(flexContainer);
-  card.appendChild(createElement('button', { textContent: 'Comments', class: 'card-comments', onclick:() => openModal(show, likesCount) }));
+  card.appendChild(createElement('button', { textContent: 'Comments', class: 'card-comments', onclick: () => openModal(show) }));
   return card;
 };
 
