@@ -38,6 +38,7 @@ const createElement = (tagName, attributes = {}) => {
 const createLikeButton = (itemId) => {
   const likeButton = createElement('button', { class: 'card-like-button', onclick: () => handleLike(itemId, updateLikesCountCallback) });
   likeButton.innerHTML = '<i class="fa fa-heart"></i>';
+  likeButton.setAttribute('aria-label', 'Like');
   return likeButton;
 };
 
@@ -46,7 +47,7 @@ const openModal = async (show) => {
   modal.classList.toggle('hide');
   modal.innerHTML = `
   <div class="modal-content">
-  <button type="button" class="close-button" id="close-button"></button>
+  <button type="button" class="close-button" id="close-button" aria-label="Close button"></button>
   <img class="modal-image" src="${show.image.original}" alt="modal-image">
   <h2 class="modal-title">${show.name}</h2>
   <article class="show-info">
@@ -102,7 +103,7 @@ const renderCards = async (show) => {
   const card = document.createElement('div');
   card.classList.add('card');
   const imageUrl = window.innerWidth > 1200 ? show.image.original : show.image.medium;
-  card.appendChild(createElement('img', { src: imageUrl, class: 'card-image' }));
+  card.appendChild(createElement('img', { src: imageUrl, class: 'card-image', alt: show.name }));
   const flexContainer = document.createElement('div');
   flexContainer.classList.add('card-top');
   const titleElement = createElement('h2', { textContent: show.name, class: 'card-title' });

@@ -1,13 +1,14 @@
 {
-  "name": "javaScript-Capstone-Project",
+  "name": "javascript-capstone-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is a web application that displays a collection of shows. Users can interact with the shows by liking them and leaving comments. The application also features a responsive navigation menu and a fancy scrollbar design. The project utilizes modules for different functionalities such as handling likes, rendering show cards, fetching data, and managing the navigation toggle.",
   "private": true,
   "scripts": {
     "dev": "webpack --mode development",
     "start": "webpack serve --open",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "gh-pages -d dist"
   },
   "jest": {
     "transform": {
@@ -43,5 +44,8 @@
     "webpack": "^5.83.1",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
