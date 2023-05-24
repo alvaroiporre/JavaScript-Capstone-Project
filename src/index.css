@@ -387,18 +387,36 @@ footer {
 .modal {
   position: fixed;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+}
+
+.modal-content {
+  background-color: whitesmoke;
+  display: flex;
   flex-direction: column;
-  background-color: white;
-  width: 80%;
-  height: 80%;
-  top: 10%;
+  align-items: center;
   border-radius: 20px;
   padding: 20px;
+  width: 90%;
+  height: 80%;
   overflow: scroll;
 }
 
 .modal-image {
   max-width: 50%;
+  border-radius: 5px;
+}
+
+.modal-title {
+  font-size: xx-large;
+  padding: 10px;
 }
 
 .hide {
@@ -406,5 +424,42 @@ footer {
 }
 
 .close-button {
-  width: 20px;
+  width: 50px;
+  margin-left: 95%;
+  margin-top: -10px;
+  z-index: 101;
+}
+
+.show-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.show-info p {
+  margin: 0 15px;
+  padding: 10px;
+}
+
+.modal-coments {
+  margin: 10px 0;
+  padding: 0;
+  text-align: left;
+}
+
+.comment {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.list-comments {
+  padding: 0;
+  margin: 0;
+}
+
+.add-comment {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,5 +1,6 @@
 import handleLike from './handleLike.js';
 import getItemLikesCount from './getLikes.js';
+import getItemComments from './getComments.js';
 import closeIcon from '../img/close.png';
 
 
@@ -29,22 +30,53 @@ const createLikeButton = (itemId) => {
   return likeButton;
 };
 
-const openModal = (show, likesCount) => {
+const openModal = async (show, likesCount) => {
   const modal = document.getElementById('modal-container');
   modal.classList.toggle('hide');
   modal.innerHTML =`
+  <div class="modal-content">
   <img class="close-button" id="close-button" src="${closeIcon}" alt="close-button"}">
   <img class="modal-image" src="${show.image.original}" alt="modal-image">
   <h2 class="modal-title">${show.name}</h2>
   <article class="show-info">
-      <p>Rating: ${show.rating.average}</p>
-      <p>Genres: ${show.genres.join(', ')}</p>
-      <p>Language: ${show.language}</p>
-      <p>Sumary: ${show.summary}</p>
-  </article>`;
+      <div>
+        <p><b>Rating:</b> ${show.rating.average}</p>
+        <p><b>Genres:</b> ${show.genres.join(', ')}</p>
+      </div>
+      <div>
+        <p><b>Language:</b> ${show.language}</p>
+        <p><b>Premiered:</b> ${show.premiered}</p>
+      </div>
+  </article>
+  <article class="modal-coments">
+    <h2>Coments ()</h2>
+    <ul class="list-comments" id="list-comments">
+    </ul>
+  </article>
+  <article>
+    <h2>Add a comment</h2>
+    <form class="add-comment">
+      <input type="text" placeholder="Your Name" id="username" require>
+      <textarea placeholder="Your Insights" id"comment" require></textarea>
+      <input type="submit" value="Comment" id="comment-button">
+    <form>
+  </article>
+  </div>`;
+  
   document.getElementById('close-button').addEventListener('click', () => {
     modal.classList.toggle('hide');
   });
+
+  const comments = await getItemComments(show.id);
+  const listComments = document.getElementById('list-comments');
+  comments.forEach((comment) => {
+    listComments.innerHTML += `
+      <li class="comment"><b>${comment.creation_date} ${comment.username}</b>: ${comment.comment}</li>
+    `;
+  })
+  
+
+
 };
 
 const renderCards = async (show) => {
