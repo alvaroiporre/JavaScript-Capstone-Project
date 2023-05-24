@@ -9,6 +9,31 @@
   --background-color: #f5f5f5;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(to top, #141e30, #243b55);
+}
+
+/* Scrollbar */
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--tertiary-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--tertiary-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
 .hidden {
   display: none !important;
 }
@@ -64,11 +89,6 @@ footer a:hover {
 #nav-counter {
   margin-left: 0.5rem;
   font-weight: bold;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-  background: linear-gradient(to top, #141e30, #243b55);
 }
 
 .container {

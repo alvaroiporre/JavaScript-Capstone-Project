@@ -3,22 +3,16 @@ import handleLike from './modules/handleLike.js';
 import { renderCards, updateLikesCountCallback } from './modules/renderCards.js';
 import fetchData from './modules/fetchShows.js';
 import toggleBurger from './modules/navToggle.js';
+import { incrementCounter, updateCounter } from './modules/showCounter.js';
 
 const container = document.getElementById('card-container');
-
-let showsTotal = 0;
-
-const updateCounter = () => {
-  const counterElement = document.getElementById('nav-counter');
-  counterElement.textContent = `(${showsTotal})`;
-};
 
 const fetchDataAndRenderCards = async () => {
   const shows = await fetchData();
   const renderPromises = shows.map(async (show) => {
     const card = await renderCards(show);
     container.appendChild(card);
-    showsTotal += 1;
+    incrementCounter();
   });
 
   await Promise.all(renderPromises);
@@ -34,6 +28,4 @@ document.addEventListener('click', async (event) => {
 
 toggleBurger();
 
-fetchDataAndRenderCards().then(() => {
-  updateCounter();
-});
+fetchDataAndRenderCards();

@@ -51,7 +51,9 @@ TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO // in progress -->
+<!-- LIVE DEMO -->
+
+- [Online version of our project](https://romans-adi.github.io/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,7 +102,7 @@ To run tests, execute the following command:
 
 ### Deployment
 
-As a future feature this project would be deployed using GitHub Pages:
+This project is deployed using GitHub Pages:
 
 - [GitHub Pages](https://pages.github.com/)
 
@@ -129,10 +131,6 @@ As a future feature this project would be deployed using GitHub Pages:
 
 - **Add more styles**
 - **Test project**
-- **Live Demo**
-- **Deploy project using GitHub pages**
-- **Provide data using API requests (GET)**
-- **Add likes and comments with POST request**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
