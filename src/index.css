@@ -462,4 +462,10 @@ footer {
 .add-comment {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.input-comment {
+  padding: 5px;
 }

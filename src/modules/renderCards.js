@@ -49,16 +49,16 @@ const openModal = async (show, likesCount) => {
       </div>
   </article>
   <article class="modal-coments">
-    <h2>Coments ()</h2>
+    <h2 id="comments-count">Coments ()</h2>
     <ul class="list-comments" id="list-comments">
     </ul>
   </article>
   <article>
     <h2>Add a comment</h2>
     <form class="add-comment">
-      <input type="text" placeholder="Your Name" id="username" require>
-      <textarea placeholder="Your Insights" id"comment" require></textarea>
-      <input type="submit" value="Comment" id="comment-button">
+      <input class="input-comment" type="text" placeholder="Your Name" id="username" require>
+      <textarea class="input-comment" placeholder="Your Insights" id"comment" require></textarea>
+      <input class="input-comment" type="submit" value="Comment" id="comment-button">
     <form>
   </article>
   </div>`;
@@ -74,6 +74,9 @@ const openModal = async (show, likesCount) => {
       <li class="comment"><b>${comment.creation_date} ${comment.username}</b>: ${comment.comment}</li>
     `;
   })
+
+  const commentsCount = document.getElementById('comments-count');
+  commentsCount.innerText = `Comments (${comments.length})`;
   
 
 
