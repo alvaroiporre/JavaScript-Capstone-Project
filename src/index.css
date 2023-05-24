@@ -85,7 +85,7 @@ body {
 header {
   background-color: var(--tertiary-color);
   box-shadow: 0 6px 11px rgba(0, 0, 0, 0.774);
-  width: 100%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -93,8 +93,8 @@ header {
 }
 
 nav {
-  width: 75%;
-  align-items: flex-end;
+  width: 100%;
+  align-items: flex-start;
   margin: 0 auto;
   display: flex;
 }
@@ -391,7 +391,7 @@ main {
 }
 
 footer {
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
   border-top: 1px solid var(--accent-color);
   color: var(--accent-color);
   padding: 20px;
