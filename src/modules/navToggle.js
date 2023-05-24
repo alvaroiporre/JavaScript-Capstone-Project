@@ -2,15 +2,6 @@ const navMenu = document.querySelector('.nav-links');
 const navToggle = document.querySelector('.nav-toggle');
 const motto = document.querySelector('.motto');
 
-navToggle.addEventListener('click', () => {
-  const visibility = navMenu.getAttribute('data-visible');
-  if (visibility === 'true') {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
-
 function openMenu() {
   navToggle.setAttribute('aria-label', 'Close menu');
   navMenu.setAttribute('data-visible', 'true');
@@ -26,6 +17,15 @@ function closeMenu() {
   motto.style.display = 'none';
   navToggle.classList.remove('checked');
 }
+
+navToggle.addEventListener('click', () => {
+  const visibility = navMenu.getAttribute('data-visible');
+  if (visibility === 'true') {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
 
 function toggleBurger() {
   const visibility = navMenu.getAttribute('data-visible');

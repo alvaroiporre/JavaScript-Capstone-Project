@@ -4,9 +4,6 @@ import { renderCards, updateLikesCountCallback } from './modules/renderCards.js'
 import fetchData from './modules/fetchShows.js';
 import toggleBurger from './modules/navToggle.js';
 
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('#nav-menu');
-const logo = document.querySelector('.logo');
 const container = document.getElementById('card-container');
 
 let showsTotal = 0;
