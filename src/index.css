@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
+:root {
+  --primary-color: #0056b3;
+  --primary-color-opaque: #0057b39d;
+  --secondary-color: #7c002e;
+  --tertiary-color: #203144;
+  --accent-color: #fff;
+  --background-color: #f5f5f5;
+}
+
+.hidden {
+  display: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
 }
 
 .flex-col {
@@ -24,7 +31,7 @@ footer a {
 }
 
 footer a {
-  color: lightgray;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -36,22 +43,22 @@ footer a {
 
 .nav-links a {
   display: block;
+  font-size: 24px;
   text-decoration: none;
-  color: #333;
+  color: var(--accent-color);
   font-weight: bold;
   padding: 5px;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-links a,
 nav a:hover,
 nav a:focus {
-  text-decoration: underline;
   font-weight: bold;
 }
 
 footer a:hover {
-  color: white;
+  color: var(--secondary-color);
 }
 
 #nav-counter {
@@ -61,6 +68,7 @@ footer a:hover {
 
 body {
   font-family: "Open Sans", sans-serif;
+  background: linear-gradient(to top, #141e30, #243b55);
 }
 
 .container {
@@ -73,12 +81,32 @@ body {
 }
 
 header {
+  background: url('./img/header-bg.jpg') no-repeat center / cover;
+  box-shadow: 0 6px 11px rgba(0, 0, 0, 0.774);
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   padding: 2%;
 }
 
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.666); /* Adjust the opacity (0.5 in this case) to control the darkness */
+}
+
 nav {
+  width: 100%;
+  align-items: flex-end;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
+  z-index: 2;
 }
 
 .logo {
@@ -87,6 +115,7 @@ nav {
 }
 
 .logo img {
+  filter: contrast(5);
   height: 100px;
 }
 
@@ -107,7 +136,7 @@ nav {
 }
 
 .nav-toggle-label {
-  background-color: crimson;
+  background-color: var(--secondary-color);
   z-index: 50;
   border: transparent 1px solid;
   border-radius: 10px;
@@ -135,7 +164,7 @@ nav {
 .nav-toggle:checked ~ .nav-toggle-label {
   border: transparent 1px solid;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: var(--background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   position: fixed;
 }
@@ -148,13 +177,13 @@ nav {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--accent-color);
   margin-bottom: 5px;
   transition: transform 0.3s ease-in-out;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label .burger {
-  background-color: #c04000;
+  background-color: var(--secondary-color);
 }
 
 .nav-toggle:checked ~ .nav-toggle-label:hover .burger {
@@ -167,10 +196,9 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background: #333;
-  padding: 1%;
+  padding-left: 3rem;
   width: 100%;
-  height: 150px;
+  height: 160px;
 }
 
 .nav-toggle:checked ~ #nav-menu li {
@@ -191,7 +219,7 @@ nav {
 
 .nav-toggle:checked ~ .nav-links li a {
   font-size: 24px;
-  color: #fff;
+  color: var(--accent-color);
   font-weight: bold;
   text-decoration: none;
 }
@@ -201,7 +229,7 @@ nav {
     height: 150px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(34, 34, 34, 0.7);
+    background-color: var(--primary-color-opaque);
     justify-content: center;
     position: fixed;
     top: 0;
@@ -225,7 +253,7 @@ nav {
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
     width: 95%;
-    color: silver;
+    color: var(--accent-color);
   }
 
   .nav-links {
@@ -270,9 +298,13 @@ main {
 }
 
 .card {
-  padding: 0;
-  max-width: 300px;
-  border: none;
+  padding: 10%;
+  border: 1px transparent solid;
+  border-radius: 10px;
+  background-color: var(--tertiary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: var(--accent-color);
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -281,12 +313,13 @@ main {
 
 .card img {
   width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: 4px 4px 0 0;
 }
 
 @media (min-width: 420px) {
   .card img {
-    height: 500px;
     width: 100%;
   }
 }
@@ -294,6 +327,7 @@ main {
 @media (min-width: 1000px) {
   .card img {
     width: 100%;
+    min-width: 230px;
     height: 400px;
   }
 }
@@ -339,27 +373,26 @@ main {
 
 .card-like-button i {
   font-size: 24px;
-  color: black;
+  color: var(--accent-color);
 }
 
 .card-like-button:hover i {
-  fill: red;
-  color: red;
+  color: crimson;
 }
 
 .card-comments {
   font-size: 14px;
   padding: 10px 20px;
   border: none;
-  background-color: #d1d1d1;
-  color: #000;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .card-comments:hover {
-  color: #fff;
-  background-color: #0056b3;
+  color: var(--accent-color);
+  background-color: crimson;
 }
 
 .card-comments:focus {
@@ -367,8 +400,9 @@ main {
 }
 
 footer {
-  background-color: black;
-  color: lightgray;
+  background-color: var(--tertiary-color);
+  border-top: 1px solid var(--accent-color);
+  color: var(--accent-color);
   padding: 20px;
   text-align: left;
   display: flex;
@@ -383,6 +417,8 @@ footer {
   }
 }
 
+/* MODAL STYLES */
+
 .modal {
   position: fixed;
   display: flex;
@@ -393,10 +429,13 @@ footer {
   width: 100%;
   height: 100%;
   top: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal-content {
-  background-color: whitesmoke;
+  background-color: rgba(33, 33, 33, 0.9);
+  position: relative;
+  color: ghostwhite;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -419,13 +458,6 @@ footer {
 
 .hide {
   display: none;
-}
-
-.close-button {
-  width: 50px;
-  margin-left: 95%;
-  margin-top: -10px;
-  z-index: 101;
 }
 
 .show-info {
@@ -467,4 +499,42 @@ footer {
 .input-comment {
   padding: 5px;
   font-family: "Open Sans", sans-serif;
+}
+
+.close-button {
+  width: 50px;
+  right: 1rem;
+  top: 1rem;
+  z-index: 101;
+  height: 50px;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.close-button::before,
+.close-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 5px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.close-button::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+  background-color: crimson;
 }

@@ -15,30 +15,32 @@
 <link rel="manifest" href="./img/favicons/site.webmanifest">
     <script defer src="main.js"></script></head>
     <body>
-        <div class="container">
-          <header>
-            <nav>
-              <a href="index.html" class="logo">
-                <img src="./img/tv-hub.png" class="logo-img" alt="TV Series Hub Logo">
-                <span class="motto">Discover, Watch, and Explore Your Favorite TV Shows</span>
-              </a>
+      <header>
+        <nav>
+          <a href="index.html" class="logo">
+            <img src="./img/tv-hub.png" class="logo-img" alt="TV Series Hub Logo">
+            <span class="motto">Discover, Watch, and Explore Your Favorite TV Shows</span>
+          </a>
 
-              <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
-              <label for="nav-toggle" class="nav-toggle-label">
-                <span class="sr-only">Open main menu</span>
-                <span class="burger"></span>
-                <span class="burger"></span>
-                <span class="burger"></span>
-              </label>
-              <ul class="nav-links" id="nav-menu">
-                <li class="nav-link"><a href="#">Home</a></li>
-                <li class="nav-link"><a href="#card-container">Shows<span id="nav-counter">(0)</span></a></li>
-                <li class="nav-link"><a href="#">About</a></li>
-              </ul>
-            </nav>
-          </header>
+          <input type="checkbox" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" class="nav-toggle visually-hidden">
+          <label for="nav-toggle" class="nav-toggle-label">
+            <span class="sr-only">Open main menu</span>
+            <span class="burger"></span>
+            <span class="burger"></span>
+            <span class="burger"></span>
+          </label>
+          <ul class="nav-links" id="nav-menu" data-visible="false">
+            <li class="nav-link"><a href="#">Home</a></li>
+            <li class="nav-link"><a href="#card-container">Shows<span id="nav-counter">(0)</span></a></li>
+            <li class="nav-link"><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </header>
+        <div class="container">
         <main>
             <div class="card-grid" id="card-container">
+            </div>
+            <div class="modal hide" id="modal-container">
             </div>
         </main>
     </div>

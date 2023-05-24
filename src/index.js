@@ -4,8 +4,6 @@ import { renderCards, updateLikesCountCallback } from './modules/renderCards.js'
 import fetchData from './modules/fetchShows.js';
 import toggleBurger from './modules/navToggle.js';
 
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-links');
 const container = document.getElementById('card-container');
 
 let showsTotal = 0;
@@ -27,8 +25,6 @@ const fetchDataAndRenderCards = async () => {
   updateCounter();
 };
 
-navToggle.addEventListener('click', toggleBurger);
-
 document.addEventListener('click', async (event) => {
   if (event.target.classList.contains('card-like-button')) {
     const itemId = event.target.getAttribute('data-item-id');
@@ -36,12 +32,7 @@ document.addEventListener('click', async (event) => {
   }
 });
 
-document.addEventListener('click', () => {
-  const visibility = navMenu.getAttribute('data-visible');
-  if (visibility === 'true' && window.innerWidth < 768) {
-    toggleBurger();
-  }
-});
+toggleBurger();
 
 fetchDataAndRenderCards().then(() => {
   updateCounter();
