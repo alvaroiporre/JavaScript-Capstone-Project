@@ -382,3 +382,29 @@ footer {
     text-align: center;
   }
 }
+
+
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  border-radius: 20px;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.modal-image {
+  max-width: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+.close-button {
+  width: 20px;
+}

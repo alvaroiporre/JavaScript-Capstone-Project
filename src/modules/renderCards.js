@@ -1,5 +1,7 @@
 import handleLike from './handleLike.js';
 import getItemLikesCount from './getLikes.js';
+import closeIcon from '../img/close.png';
+
 
 const updateLikesCountCallback = async (itemId) => {
   const likesCountElement = document.querySelector(`#likes-count-${itemId}`);
@@ -27,8 +29,22 @@ const createLikeButton = (itemId) => {
   return likeButton;
 };
 
-const openModal = () => {
-  // CODE FOR MODAL WINDOW
+const openModal = (show, likesCount) => {
+  const modal = document.getElementById('modal-container');
+  modal.classList.toggle('hide');
+  modal.innerHTML =`
+  <img class="close-button" id="close-button" src="${closeIcon}" alt="close-button"}">
+  <img class="modal-image" src="${show.image.original}" alt="modal-image">
+  <h2 class="modal-title">${show.name}</h2>
+  <article class="show-info">
+      <p>Rating: ${show.rating.average}</p>
+      <p>Genres: ${show.genres.join(', ')}</p>
+      <p>Language: ${show.language}</p>
+      <p>Sumary: ${show.summary}</p>
+  </article>`;
+  document.getElementById('close-button').addEventListener('click', () => {
+    modal.classList.toggle('hide');
+  });
 };
 
 const renderCards = async (show) => {
@@ -46,7 +62,7 @@ const renderCards = async (show) => {
   likesContainer.appendChild(createElement('span', { textContent: `${likesCount} likes`, id: `likes-count-${show.id}` }));
   flexContainer.appendChild(likesContainer);
   card.appendChild(flexContainer);
-  card.appendChild(createElement('button', { textContent: 'Comments', class: 'card-comments', onclick: openModal }));
+  card.appendChild(createElement('button', { textContent: 'Comments', class: 'card-comments', onclick:() => openModal(show, likesCount) }));
   return card;
 };
 
