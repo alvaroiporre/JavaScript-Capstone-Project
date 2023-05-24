@@ -1,7 +1,6 @@
 import handleLike from './handleLike.js';
 import getItemLikesCount from './getLikes.js';
 import getItemComments from './getComments.js';
-import closeIcon from '../img/close.png';
 import addComment from './addComment.js';
 
 const updateLikesCountCallback = async (itemId) => {
@@ -47,7 +46,7 @@ const openModal = async (show) => {
   modal.classList.toggle('hide');
   modal.innerHTML = `
   <div class="modal-content">
-  <img class="close-button" id="close-button" src="${closeIcon}" alt="close-button"}">
+  <button type="button" class="close-button" id="close-button"></button>
   <img class="modal-image" src="${show.image.original}" alt="modal-image">
   <h2 class="modal-title">${show.name}</h2>
   <article class="show-info">
