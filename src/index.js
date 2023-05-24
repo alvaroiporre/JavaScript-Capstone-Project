@@ -14,7 +14,6 @@ const fetchDataAndRenderCards = async () => {
     container.appendChild(card);
     incrementCounter();
   });
-
   await Promise.all(renderPromises);
   updateCounter();
 };
@@ -27,5 +26,4 @@ document.addEventListener('click', async (event) => {
 });
 
 toggleBurger();
-
 fetchDataAndRenderCards();

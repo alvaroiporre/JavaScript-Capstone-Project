@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 let showsTotal = 0;
 
 const updateCounter = () => {
