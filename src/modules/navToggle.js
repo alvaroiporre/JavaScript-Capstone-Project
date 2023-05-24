@@ -18,7 +18,7 @@ function closeMenu() {
   navToggle.classList.remove('checked');
 }
 
-navMenu.addEventListener('click', () =>{
+navMenu.addEventListener('click', () => {
   const visibility = navMenu.getAttribute('data-visible');
   if (visibility === 'true') {
     closeMenu();

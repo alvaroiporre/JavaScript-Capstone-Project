@@ -11,7 +11,7 @@ const updateLikesCountCallback = async (itemId) => {
 
 const updateCommentsCallback = async (commentsCountN, comment) => {
   const commentsCount = document.getElementById('comments-count');
-  commentsCount.innerText = `Comments (${commentsCountN})`;
+  commentsCount.innerText = `Comments (${commentsCountN + 1})`;
 
   const listComments = document.getElementById('list-comments');
   listComments.innerHTML += `
@@ -81,21 +81,21 @@ const openModal = async (show) => {
 
   const comments = await getItemComments(show.id);
   const listComments = document.getElementById('list-comments');
-  comments.forEach((comment) => {
+  comments.comentsData.forEach((comment) => {
     listComments.innerHTML += `
       <li class="comment"><b>${comment.creation_date} ${comment.username}</b>: ${comment.comment}</li>
     `;
   });
 
   const commentsCount = document.getElementById('comments-count');
-  commentsCount.innerText = `Comments (${comments.length})`;
+  commentsCount.innerText = `Comments (${comments.count})`;
 
   const addCommentForm = document.getElementById('add-comment-form');
   addCommentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const usernameInput = document.getElementById('username').value;
     const commentInput = document.getElementById('comment').value;
-    await addComment(show.id, usernameInput, commentInput, comments.length, updateCommentsCallback);
+    await addComment(show.id, usernameInput, commentInput, comments.count, updateCommentsCallback);
   });
 };
 
