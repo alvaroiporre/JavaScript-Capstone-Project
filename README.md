@@ -9,6 +9,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [Future Features ](#future-features-)
   - [:video\_camera: Video Presentation ](#video_camera-video-presentation-)
   - [:rocket: Live Demo ](#rocket-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
@@ -17,7 +18,6 @@
     - [Usage](#usage)
     - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
-    - [Future Features ](#future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -52,6 +52,15 @@ TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It
   <li>Tested with Jest Javascript Testing Framework</li>
 </ul>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Future Features -->
+
+### Future Features <a name="future-features"></a>
+
+- **Add more cards**
+- **Add About section**
+-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- VIDEO PRESENTATION -->
@@ -137,15 +146,6 @@ This project is deployed using GitHub Pages:
 - Twitter: [@obj583](https://twitter.com/obj583/)
 - LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Future Features -->
-
-### Future Features <a name="future-features"></a>
-
-- **Add more cards**
-- **Add About section**
--
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
