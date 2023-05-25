@@ -7,7 +7,7 @@ const updateCommentsCallback = async (commentsCountN, comment) => {
 
   const listComments = document.getElementById('list-comments');
   listComments.innerHTML += `
-      <li class="comment"><b>${new Date().toISOString().split('T')[0]} ${comment.username}</b>: ${comment.comment}</li>
+      <li class="comment"><b>${new Date().toISOString().split('T')[0]} ${comment.username}:</b> ${comment.comment}</li>
     `;
 
   document.getElementById('username').value = '';
@@ -40,8 +40,8 @@ const openPopup = async (show) => {
   <article class="modal-form">
     <h2>Add a comment</h2>
     <form class="add-comment" id="add-comment-form">
-      <input class="input-comment" type="text" placeholder="Your Name" id="username" require>
-      <textarea class="input-comment" placeholder="Your Insights" id="comment" require></textarea>
+      <input class="input-comment" type="text" placeholder="Your Name" id="username" required>
+      <textarea class="input-comment" placeholder="Your Insights" id="comment" required></textarea>
       <input class="input-comment card-comments" type="submit" value="Comment" id="comment-button">
     <form>
   </article>
@@ -71,7 +71,13 @@ const openPopup = async (show) => {
     e.preventDefault();
     const usernameInput = document.getElementById('username').value;
     const commentInput = document.getElementById('comment').value;
-    await addComment(show.id, usernameInput, commentInput, comments.count, updateCommentsCallback);
+    const data = {
+      id: show.id,
+      username: usernameInput,
+      comment: commentInput,
+      count: comments.count,
+    };
+    await addComment(data, updateCommentsCallback);
   });
 };
 
