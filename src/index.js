@@ -27,7 +27,9 @@ document.addEventListener('click', async (event) => {
     await handleLike(itemId, updateLikesCountCallback);
   }
 });
+
 toggleButton.addEventListener('click', toggleMenu);
+
 navLinks.forEach((navLink) => {
   navLink.addEventListener('click', toggleMenu);
 });

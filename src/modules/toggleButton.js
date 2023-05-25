@@ -22,7 +22,7 @@ function hideMenu() {
 
 function toggleMenu() {
   const visibility = navMenu.getAttribute('data-visible');
-  if (visibility === 'true') {
+  if (visibility === 'true' && window.innerWidth < 768) {
     hideMenu();
     toggleButton.setAttribute('aria-expanded', 'false');
     navMenu.setAttribute('data-visible', 'false');
