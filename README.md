@@ -5,7 +5,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 To Do List](#-to-do-list)
+- [📖 TV Series Hub](#-tv-series-hub)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 <a name="about-project">To Do List</a>
+# 📖 <a name="about-project">TV Series Hub</a>
 
 TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It serves as a centralized platform for TV series enthusiasts, offering a user-friendly interface to explore, discover, and watch a vast collection of TV series. The application utilizes RESTful APIs to fetch data about series, episodes, and cast information from external sources, ensuring up-to-date and comprehensive content. The frontend is designed with a responsive layout, adapting seamlessly to different devices and screen sizes for an optimal viewing experience. The codebase follows modular and maintainable architecture patterns, adhering to industry best practices for scalability and extensibility. TV Hub Series aims to provide an immersive and convenient TV series browsing experience, combining modern design elements with reliable functionality.
 
