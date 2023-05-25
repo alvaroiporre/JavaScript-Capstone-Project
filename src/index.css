@@ -165,7 +165,7 @@ nav {
   position: fixed;
   padding: 15px;
   top: 3rem;
-  right: 1rem;
+  right: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -246,7 +246,7 @@ nav {
 
 @media (max-width: 768px) {
   header {
-    height: 150px;
+    height: 160px;
     display: flex;
     flex-direction: column;
     background-color: var(--primary-color-opaque);
@@ -259,7 +259,7 @@ nav {
   }
 
   .logo {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .logo img {
@@ -543,11 +543,11 @@ footer {
 
 .close-button {
   width: 50px;
-  right: 1rem;
-  top: 1rem;
+  right: 7%;
+  top: 12%;
   z-index: 101;
   height: 50px;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   background: none;
   outline: none;

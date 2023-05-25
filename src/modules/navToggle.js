@@ -1,5 +1,4 @@
-const navMenu = document.querySelector('.nav-links');
-const navToggle = document.querySelector('.nav-toggle');
+const navToggle = document.querySelector('#nav-toggle');
 const motto = document.querySelector('.motto');
 
 function openMenu() {
@@ -18,21 +17,15 @@ function closeMenu() {
   navToggle.classList.remove('checked');
 }
 
-navMenu.addEventListener('click', () => {
-  const visibility = navMenu.getAttribute('data-visible');
-  if (visibility === 'true') {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
 function toggleBurger() {
   const visibility = navMenu.getAttribute('data-visible');
   if (visibility === 'true') {
+    closeMenu();
     navToggle.setAttribute('aria-expanded', 'false');
     navMenu.setAttribute('data-visible', 'false');
     navMenu.setAttribute('aria-expanded', 'false');
   } else {
+    openMenu();
     navToggle.setAttribute('aria-expanded', 'true');
     navMenu.setAttribute('data-visible', 'true');
     navMenu.setAttribute('aria-expanded', 'true');

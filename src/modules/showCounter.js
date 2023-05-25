@@ -1,14 +1,13 @@
 // eslint-disable-next-line
-let showsTotal = 0;
 
-const updateCounter = () => {
+const updateCounter = (counter) => {
   const counterElement = document.getElementById('nav-counter');
-  counterElement.textContent = `(${showsTotal})`;
+  counterElement.textContent = `(${counter.showsTotal})`;
 };
 
-const incrementCounter = () => {
-  showsTotal += 1;
-  updateCounter();
+const incrementCounter = (counter) => {
+  counter.showsTotal = counter.showsTotal ? counter.showsTotal + 1 : 1;
+  updateCounter(counter);
 };
 
-export { showsTotal, incrementCounter, updateCounter };
+export { incrementCounter, updateCounter };
