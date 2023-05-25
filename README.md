@@ -9,6 +9,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [:rocket: Live Demo ](#rocket-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -54,7 +55,9 @@ TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It
 
 <!-- LIVE DEMO -->
 
-- [Online version of our project](https://romans-adi.github.io/)
+## :rocket: Live Demo <a name="key-features"></a>
+
+- [Online version of our project](https://alvaroiporre.github.io/JavaScript-Capstone-Project/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -4,9 +4,9 @@ const getItemComments = async (itemId) => {
   const commentsData = await response.json();
 
   if (commentsData.length > 0) {
-    return commentsData;
+    return { comentsData: commentsData, count: commentsData.length };
   }
-  return [];
+  return { commentsData: [], count: 0 };
 };
 
 export default getItemComments;
