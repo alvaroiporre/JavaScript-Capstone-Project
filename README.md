@@ -9,6 +9,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [:video\_camera: Video Presentation ](#video_camera-video-presentation-)
   - [:rocket: Live Demo ](#rocket-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -53,9 +54,16 @@ TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- VIDEO PRESENTATION -->
+
+## :video_camera: Video Presentation <a name="video-presentation"></a>
+
+- [Video presentation of our project](https://drive.google.com/file/d/17uQaO6U8fzb0Bly8rcJyXkf2fQFWTCF4/view?usp=sharing
+)
+
 <!-- LIVE DEMO -->
 
-## :rocket: Live Demo <a name="key-features"></a>
+## :rocket: Live Demo <a name="live-demo"></a>
 
 - [Online version of our project](https://alvaroiporre.github.io/JavaScript-Capstone-Project/)
 
@@ -133,9 +141,9 @@ This project is deployed using GitHub Pages:
 
 ### Future Features <a name="future-features"></a>
 
-- **Add more styles**
-- **Test project**
-
+- **Add more cards**
+- **Add About section**
+- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
