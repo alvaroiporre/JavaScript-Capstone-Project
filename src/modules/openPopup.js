@@ -7,7 +7,7 @@ const updateCommentsCallback = async (commentsCountN, comment) => {
 
   const listComments = document.getElementById('list-comments');
   listComments.innerHTML += `
-      <li class="comment">${new Date().toISOString().split('T')[0]} <b class="username">${comment.username}:</b> ${comment.comment}</li>
+  <li class="comment"><p>${new Date().toISOString().split('T')[0]} <b class="username"> ${comment.username}: </b></p> <p class="comment-content">${comment.comment}</p></li>
     `;
 
   document.getElementById('username').value = '';
