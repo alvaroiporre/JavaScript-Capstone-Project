@@ -8,7 +8,7 @@ describe('counter', () => {
   let counter;
 
   beforeEach(() => {
-    counter = { showsTotal: 0 }; // Initialize showsTotal before each test
+    counter = { showsTotal: 0 };
     document.body.innerHTML = '<div id="nav-counter"></div>';
   });
 

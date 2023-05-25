@@ -6,7 +6,7 @@ import toggleMenu from './modules/toggleButton.js';
 import { incrementCounter, updateCounter } from './modules/showCounter.js';
 
 const container = document.getElementById('card-container');
-let counter = { showsTotal: 0 };
+const counter = { showsTotal: 0 };
 const toggleButton = document.querySelector('.nav-toggle-label');
 const navLinks = document.querySelectorAll('.nav-link');
 
