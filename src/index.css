@@ -555,6 +555,11 @@ footer {
 .comment {
   list-style: none;
   padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: #f5f5f5 1px solid;
+  margin: 10px;
 }
 
 .list-comments {
