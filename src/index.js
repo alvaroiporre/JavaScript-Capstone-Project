@@ -4,6 +4,7 @@ import { renderCards, updateLikesCountCallback } from './modules/renderCards.js'
 import fetchData from './modules/fetchShows.js';
 import toggleMenu from './modules/toggleButton.js';
 import { incrementCounter, updateCounter } from './modules/showCounter.js';
+import scrollToShowLink from './modules/smoothScroll.js';
 
 const container = document.getElementById('card-container');
 const counter = { showsTotal: 0 };
@@ -33,5 +34,7 @@ toggleButton.addEventListener('click', toggleMenu);
 navLinks.forEach((navLink) => {
   navLink.addEventListener('click', toggleMenu);
 });
+
+scrollToShowLink();
 
 fetchDataAndRenderCards();
