@@ -15,14 +15,14 @@ describe('Comments counter test:', () => {
   it('should return empty comments when commentsData is empty', async () => {
     global.fetch.mockResolvedValueOnce({ json: () => Promise.resolve([]) });
     const comments = await getItemComments(1);
-    expect(comments.commentsData).toEqual([]);
+    expect(comments.comentsData).toEqual([]);
     expect(comments.count).toBe(0);
   });
   it('should return correct comments data', async () => {
     const expectedComments = [{ username: 'pedro', comment: 'hello' }, { username: 'juan', comment: 'good movie' }];
     global.fetch.mockResolvedValueOnce({ json: () => Promise.resolve(expectedComments) });
     const comments = await getItemComments(1);
-    expect(comments.commentsData).toEqual(expectedComments.commentsData);
+    expect(comments.comentsData).toEqual(expectedComments);
     expect(comments.count).toBe(expectedComments.length);
   });
 });
