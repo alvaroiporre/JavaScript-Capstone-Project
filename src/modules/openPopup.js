@@ -1,6 +1,5 @@
-import getItemComments from "./getComments";
-import addComment from "./addComment";
-import fetchData from "./fetchShows";
+import getItemComments from './getComments.js';
+import addComment from './addComment.js';
 
 const updateCommentsCallback = async (commentsCountN, comment) => {
   const commentsCount = document.getElementById('comments-count');

@@ -1,26 +1,12 @@
+import createElement from './createElement.js';
 import handleLike from './handleLike.js';
 import getItemLikesCount from './getLikes.js';
-import openModal from './openPopup.js';
 import openPopup from './openPopup.js';
 
 const updateLikesCountCallback = async (itemId) => {
   const likesCountElement = document.querySelector(`#likes-count-${itemId}`);
   const likesCount = await getItemLikesCount(itemId);
   likesCountElement.textContent = `${likesCount} likes`;
-};
-
-const createElement = (tagName, attributes = {}) => {
-  const element = document.createElement(tagName);
-  Object.entries(attributes).forEach(([key, value]) => {
-    if (key === 'textContent') {
-      element.textContent = value;
-    } else if (key === 'onclick') {
-      element.addEventListener('click', value);
-    } else {
-      element.setAttribute(key, value);
-    }
-  });
-  return element;
 };
 
 const createLikeButton = (itemId) => {
