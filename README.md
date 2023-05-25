@@ -61,6 +61,8 @@ TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It
 - [Video presentation of our project](https://drive.google.com/file/d/17uQaO6U8fzb0Bly8rcJyXkf2fQFWTCF4/view?usp=sharing
 )
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LIVE DEMO -->
 
 ## :rocket: Live Demo <a name="live-demo"></a>
@@ -143,7 +145,7 @@ This project is deployed using GitHub Pages:
 
 - **Add more cards**
 - **Add About section**
-- 
+-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
