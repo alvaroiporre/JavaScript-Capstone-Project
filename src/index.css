@@ -1,3 +1,50 @@
+/* ANIMATION */
+
+.scale-out-hor-right {
+  -webkit-animation:
+    scale-out-hor-right 0.7s
+    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: scale-out-hor-right 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-out-hor-right {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out-hor-right {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+
+/* FONTS */
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
 :root {
@@ -101,7 +148,7 @@ footer a:hover {
 }
 
 header {
-  background: url('./img/header-bg.jpg') no-repeat center / cover;
+  background: url("./img/header-bg.jpg") no-repeat center / cover;
   box-shadow: 0 6px 11px rgba(0, 0, 0, 0.774);
   width: 85%;
   margin: 0 auto;
@@ -112,13 +159,13 @@ header {
 }
 
 header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.666); /* Adjust the opacity (0.5 in this case) to control the darkness */
+  background-color: rgba(0, 0, 0, 0.666);
 }
 
 nav {
@@ -329,6 +376,12 @@ main {
   flex-direction: column;
   justify-content: space-between;
   gap: 0.6rem;
+  transition: all 2000ms ease-in;
+}
+
+.card:hover {
+  border: 1px solid var(--accent-color);
+  background-color: var(--primary-color-opaque);
 }
 
 .card img {
@@ -450,7 +503,7 @@ footer {
   width: 100%;
   height: 100%;
   top: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .modal-content {
@@ -556,7 +609,7 @@ footer {
 
 .close-button::before,
 .close-button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;

@@ -76,7 +76,11 @@ const openModal = async (show) => {
   </div>`;
 
   document.getElementById('close-button').addEventListener('click', () => {
-    modal.classList.toggle('hide');
+    modal.classList.add('scale-out-hor-right');
+    setTimeout(() => {
+      modal.classList.toggle('hide');
+      modal.classList.remove('scale-out-hor-right');
+    }, 700);
   });
 
   const comments = await getItemComments(show.id);
