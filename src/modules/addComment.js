@@ -1,10 +1,10 @@
-const addComment = async (itemId, username, comment, commentsCount, updateCommentsCallback) => {
+const addComment = async (data, updateCommentsCallback) => {
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/2kCfF1syB4EtsO7lyqfM/comments';
 
   const requestBody = {
-    item_id: itemId,
-    username,
-    comment,
+    item_id: data.id,
+    username: data.username,
+    comment: data.comment,
   };
 
   const response = await fetch(url, {
@@ -16,7 +16,7 @@ const addComment = async (itemId, username, comment, commentsCount, updateCommen
   });
 
   if (response.status === 201) {
-    await updateCommentsCallback(commentsCount, requestBody);
+    await updateCommentsCallback(data.count, requestBody);
   } else {
     // error handling
   }

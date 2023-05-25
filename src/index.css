@@ -522,7 +522,25 @@ footer {
   padding: 20px;
   width: 90%;
   height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--tertiary-color);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background-color: var(--tertiary-color);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
 }
 
 .modal-image {
@@ -555,6 +573,18 @@ footer {
 .comment {
   list-style: none;
   padding: 5px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: #f5f5f5 1px solid;
+  color: #d1d1d1;
+  margin: 10px;
+}
+
+.username {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
 }
 
 .list-comments {
