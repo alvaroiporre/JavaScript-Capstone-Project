@@ -38,7 +38,7 @@ TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It
    <li><a href="https://www.w3.org/TR/CSS/#css">CSS</a></li>
    <li><a href="https://www.javascript.com/">JavaScript</a></li>
    <li><a href="https://webpack.js.org/">Webpack bundler</a></li>
-   <li><a href="https://webpack.js.org/">Jest Testing Framework</a></li>
+   <li><a href="https://jestjs.io/">Jest Testing Framework</a></li>
   </ul>
 
 <!-- Features -->
