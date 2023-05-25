@@ -556,10 +556,17 @@ footer {
   list-style: none;
   padding: 5px 0;
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
   text-align: center;
   border-bottom: #f5f5f5 1px solid;
+  color: #d1d1d1;
   margin: 10px;
+}
+
+.username {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
 }
 
 .list-comments {
