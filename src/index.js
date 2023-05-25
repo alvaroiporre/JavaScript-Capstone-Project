@@ -36,5 +36,4 @@ navLinks.forEach((navLink) => {
 });
 
 scrollToShowLink();
-
 fetchDataAndRenderCards();
