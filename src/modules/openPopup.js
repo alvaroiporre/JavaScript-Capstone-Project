@@ -59,7 +59,7 @@ const openPopup = async (show) => {
   const listComments = document.getElementById('list-comments');
   comments.comentsData.forEach((comment) => {
     listComments.innerHTML += `
-      <li class="comment"><b>${comment.creation_date}      ${comment.username}:</b> ${comment.comment}</li>
+      <li class="comment"><b>${comment.creation_date} ${comment.username}:</b> ${comment.comment}</li>
     `;
   });
 
